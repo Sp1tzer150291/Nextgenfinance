@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NextGen Finance</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
         body {
-            font-family: 'Times New Roman', serif;
+            font-family: 'Merriweather', serif;
             margin: 0;
             padding: 0;
-            background-color: #2b2b2b; /* Фон чуть светлее, чем тёмный фон логотипа */
+            background-color: #2b2b2b;
+            color: #ffffff;
         }
         .header {
             background-color: #1f1f1f;
@@ -21,29 +24,31 @@
             width: 200px;
             margin-bottom: 10px;
         }
-        .intro, .services, .packages {
+        .intro, .services, .contacts {
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
-            background: white;
+            background: transparent;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .intro h2, .services h2, .packages h2 {
-            color: #333;
+        .intro h2, .services h2, .contacts h2 {
+            color: #ffffff;
+            font-weight: 700;
         }
-        .intro p, .service p, .package p {
+        .intro p, .service p {
             line-height: 1.6;
+            font-weight: 300;
+            color: #dcdcdc;
         }
-        .service, .package {
+        .service {
             margin-bottom: 20px;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.1);
         }
         .price {
             font-weight: bold;
-            color: #007BFF;
+            color: #00b4ff;
         }
         .lang-switch {
             text-align: center;
@@ -52,7 +57,8 @@
         .lang-switch a {
             margin: 0 10px;
             text-decoration: none;
-            color: #007BFF;
+            color: #00b4ff;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -64,12 +70,12 @@
     </div>
 
     <div class="lang-switch">
-        <a href="#" onclick="switchLanguage('ru')">Русский</a>
-        <a href="#" onclick="switchLanguage('en')">English</a>
-        <a href="#" onclick="switchLanguage('kk')">Қазақша</a>
+        <a onclick="switchLanguage('ru')">Русский</a>
+        <a onclick="switchLanguage('en')">English</a>
+        <a onclick="switchLanguage('kk')">Қазақша</a>
     </div>
 
-    <div class="intro">
+    <div class="intro" id="intro">
         <h2>О компании</h2>
         <p>NextGen Finance - это современная консалтинговая компания, которая специализируется на предоставлении качественных финансовых и бухгалтерских услуг. Мы помогаем нашим клиентам оптимизировать бизнес-процессы, снижать расходы и увеличивать прибыльность. Наша миссия заключается в создании устойчивых решений, которые помогают бизнесу расти и процветать в условиях быстро меняющейся экономической среды.</p>
         <p>Ценности компании:</p>
@@ -81,7 +87,7 @@
         </ul>
     </div>
 
-    <div class="services">
+    <div class="services" id="services">
         <div class="service">
             <h2>Финансовый менеджмент</h2>
             <p>Мы предлагаем профессиональные услуги в области финансового менеджмента для вашего бизнеса. Наша команда экспертов помогает оптимизировать денежные потоки, составить финансовые планы и внедрить эффективные стратегии управления финансами. Мы обеспечим устойчивость вашего бизнеса, минимизируя финансовые риски и увеличивая прибыль. Услуги включают разработку бюджета, прогнозирование доходов и расходов, а также анализ финансовой эффективности. 
@@ -132,28 +138,28 @@
         </div>
     </div>
 
-    <div class="packages">
-        <h2>Пакеты услуг</h2>
-        <div class="package">
-            <h3>Базовый пакет</h3>
-            <p>Подходит для малого бизнеса. Включает услуги бухгалтерского учета и ежемесячную консультацию.</p>
-            <p class="price">Цена: 200 000 тенге в месяц</p>
-        </div>
-        <div class="package">
-            <h3>Стандартный пакет</h3>
-            <p>Для среднего бизнеса. Включает финансовый менеджмент, бухгалтерский аутсорсинг и консультации по налогам.</p>
-            <p class="price">Цена: 350 000 тенге в месяц</p>
-        </div>
-        <div class="package">
-            <h3>Премиум пакет</h3>
-            <p>Для крупных компаний. Включает полный спектр услуг, включая аутстафинг и внедрение управленческого учета.</p>
-            <p class="price">Цена: 600 000 тенге в месяц</p>
-        </div>
+    <div class="contacts">
+        <h2>Контакты</h2>
+        <p><strong>Адрес:</strong> г. Алматы, ул. Достык, 123</p>
+        <p><strong>Телефон:</strong> +7 (727) 123-45-67</p>
+        <p><strong>Email:</strong> info@nextgenfinance.kz</p>
+        <p><strong>Часы работы:</strong> Пн-Пт, 9:00 - 18:00</p>
     </div>
 
     <script>
         function switchLanguage(lang) {
-            alert('Switching language to ' + lang + '. Currently, only Russian is implemented.');
+            const intro = document.getElementById('intro');
+            const services = document.getElementById('services');
+
+            if (lang === 'en') {
+                intro.innerHTML = `<h2>About Us</h2><p>NextGen Finance is a modern consulting company specializing in high-quality financial and accounting services...</p>`;
+                services.innerHTML = `<div class="service"><h2>Financial Management</h2><p>We offer professional financial management services...</p></div>`;
+            } else if (lang === 'kk') {
+                intro.innerHTML = `<h2>Компания туралы</h2><p>NextGen Finance - заманауи консалтингтік компания...</p>`;
+                services.innerHTML = `<div class="service"><h2>Қаржылық менеджмент</h2><p>Біз кәсіби қаржылық менеджмент қызметтерін ұсынамыз...</p></div>`;
+            } else {
+                location.reload(); // Reset to Russian by refreshing the page
+            }
         }
     </script>
 </body>
