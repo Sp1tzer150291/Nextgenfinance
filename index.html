@@ -19,10 +19,30 @@
             color: white;
             padding: 20px;
             text-align: center;
+            position: relative;
         }
         .header img {
             width: 200px;
             margin-bottom: 10px;
+        }
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+        .lang-switch a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: #00b4ff;
+            font-weight: bold;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .lang-switch a:hover {
+            color: #ffffff;
         }
         .intro, .services, .contacts {
             max-width: 1200px;
@@ -50,15 +70,12 @@
             font-weight: bold;
             color: #00b4ff;
         }
-        .lang-switch {
+        .footer {
             text-align: center;
-            margin-bottom: 20px;
-        }
-        .lang-switch a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #00b4ff;
-            cursor: pointer;
+            padding: 10px;
+            background-color: #1f1f1f;
+            color: #dcdcdc;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -67,12 +84,11 @@
         <img src="logo.png" alt="NextGen Finance Logo">
         <h1>NextGen Finance</h1>
         <h3>Business Consulting</h3>
-    </div>
-
-    <div class="lang-switch">
-        <a onclick="switchLanguage('ru')">Русский</a>
-        <a onclick="switchLanguage('en')">English</a>
-        <a onclick="switchLanguage('kk')">Қазақша</a>
+        <div class="lang-switch">
+            <a onclick="switchLanguage('ru')">RU</a>
+            <a onclick="switchLanguage('en')">EN</a>
+            <a onclick="switchLanguage('kk')">KK</a>
+        </div>
     </div>
 
     <div class="intro" id="intro">
@@ -144,6 +160,10 @@
         <p><strong>Телефон:</strong> +7 (727) 123-45-67</p>
         <p><strong>Email:</strong> info@nextgenfinance.kz</p>
         <p><strong>Часы работы:</strong> Пн-Пт, 9:00 - 18:00</p>
+    </div>
+
+    <div class="footer">
+        &copy; 2025 NextGen Finance. Все права защищены.
     </div>
 
     <script>
