@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обратная связь | NextGen Finance</title>
+    <title>NextGen Finance</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
 
@@ -36,37 +36,39 @@
         .nav a:hover {
             color: #ffffff;
         }
-        .content {
-            max-width: 800px;
+        .intro {
+            max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-        }
-        form {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            gap: 20px;
         }
-        label {
-            margin-bottom: 5px;
+        .intro img {
+            max-width: 50%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        input, textarea {
-            margin-bottom: 15px;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            width: 100%;
+        .values {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
         }
-        button {
-            padding: 10px 20px;
-            background-color: #00b4ff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .value {
+            flex: 1 1 calc(45% - 10px);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
         }
-        button:hover {
-            background-color: #008dcc;
+        .value img {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 10px;
         }
         .footer {
             text-align: center;
@@ -81,29 +83,20 @@
     <div class="header">
         <img src="logo.png" alt="NextGen Finance Logo">
         <h1>NextGen Finance</h1>
+        <h3>Business Consulting</h3>
         <div class="nav">
-    <a href="index.html">Главная</a>
-    <a href="services.html">Услуги</a>
-    <a href="contacts.html">Контакты</a>
-    <a href="feedback.html">Обратная связь</a>
-</div>
+            <a href="index.html">Главная</a>
+            <a href="services.html">Услуги</a>
+            <a href="contacts.html">Контакты</a>
+        </div>
     </div>
 
-    <div class="content">
-        <h2>Обратная связь</h2>
-        <p>Если у вас есть вопросы или предложения, заполните форму ниже, и мы свяжемся с вами в ближайшее время.</p>
-        <form action="#" method="POST">
-            <label for="name">Имя:</label>
-            <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
-
-            <label for="message">Сообщение:</label>
-            <textarea id="message" name="message" rows="5" placeholder="Введите ваше сообщение" required></textarea>
-
-            <button type="submit">Отправить</button>
-        </form>
+    <div class="intro">
+        <img src="optimized_image.png" alt="About Us">
+        <div>
+            <h2>О компании</h2>
+            <p>NextGen Finance – это современная консалтинговая компания, которая специализируется на предоставлении качественных финансовых и бухгалтерских услуг. Мы помогаем нашим клиентам оптимизировать бизнес-процессы, снижать расходы и увеличивать прибыльность. Наша миссия заключается в создании устойчивых решений, которые помогают бизнесу расти и процветать в условиях быстро меняющейся экономической среды.</p>
+        </div>
     </div>
 
     <div class="footer">
