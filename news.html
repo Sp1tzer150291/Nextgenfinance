@@ -76,18 +76,35 @@
 
     <div class="content">
         <h2>Новости</h2>
-        <div class="news-item">
-            <h3>Изменения в налоговом законодательстве 2025</h3>
-            <p>Узнайте о последних изменениях в налоговом кодексе и их влиянии на ваш бизнес. Прочитайте больше на нашем сайте!</p>
-        </div>
-        <div class="news-item">
-            <h3>Советы по внедрению управленческого учета</h3>
-            <p>Как управленческий учет может помочь вашему бизнесу? Делимся полезными практиками и рекомендациями.</p>
-        </div>
     </div>
 
     <div class="footer">
         &copy; 2025 NextGen Finance. Все права защищены.
     </div>
+
+    <script>
+        // Загружаем новости из JSON-файла
+        fetch('news.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ошибка загрузки данных');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const container = document.querySelector('.content');
+                data.forEach(news => {
+                    const newsItem = document.createElement('div');
+                    newsItem.className = 'news-item';
+                    newsItem.innerHTML = `<h3>${news.title}</h3><p>${news.content}</p>`;
+                    container.appendChild(newsItem);
+                });
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                const container = document.querySelector('.content');
+                container.innerHTML += '<p>Не удалось загрузить новости.</p>';
+            });
+    </script>
 </body>
 </html>
