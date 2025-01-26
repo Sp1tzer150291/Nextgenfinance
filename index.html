@@ -4,75 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NextGen Finance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
-
         body {
-            font-family: 'Merriweather', serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
-            color: #ffffff;
+            background: #f7f9fc;
+            color: #333;
         }
         .header {
-            background-color: #1f1f1f;
-            color: white;
+            background-color: #003366;
+            color: #ffffff;
             padding: 20px;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .header img {
-            width: 200px;
+            width: 150px;
             margin-bottom: 10px;
         }
         .header h1 {
-            font-size: 3rem;
-            color: #00b4ff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-size: 2rem;
+            margin: 0;
         }
         .nav {
-            margin: 20px 0;
+            margin-top: 10px;
         }
         .nav a {
-            margin: 0 10px;
+            margin: 0 15px;
             text-decoration: none;
-            color: #00b4ff;
+            color: #ffd700;
             font-weight: bold;
-            position: relative;
             transition: color 0.3s;
         }
         .nav a:hover {
             color: #ffffff;
         }
-        .nav a:hover::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: #00b4ff;
-            transition: width 0.3s;
-        }
         .intro {
             max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            margin: 100px auto 20px;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
             gap: 20px;
+            overflow: hidden;
         }
         .intro img {
-            max-width: 50%;
+            max-width: 45%;
             height: auto;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .intro img:hover {
+            transform: scale(1.05);
         }
         .intro h2 {
-            font-size: 2.5rem;
-            color: #00b4ff;
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 15px;
+        }
+        .intro p {
+            line-height: 1.6;
+            color: #555;
+        }
+        .intro .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            color: #ffffff;
+            background: #003366;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        .intro .btn:hover {
+            background: #002244;
         }
         .values {
             display: flex;
@@ -83,42 +99,51 @@
             max-width: 1200px;
         }
         .value {
-            flex: 1 1 calc(33% - 10px);
-            background: rgba(255, 255, 255, 0.1);
+            flex: 1 1 calc(33.33% - 20px);
+            background: #ffffff;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .value:hover {
             transform: translateY(-10px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
         .value img {
-            max-width: 100px;
+            max-width: 80px;
             height: auto;
+            margin-bottom: 15px;
+        }
+        .value h3 {
+            font-size: 1.5rem;
+            color: #003366;
             margin-bottom: 10px;
+        }
+        .value p {
+            line-height: 1.4;
+            color: #555;
         }
         .footer {
             text-align: center;
-            padding: 10px;
-            background-color: #1f1f1f;
-            color: #dcdcdc;
+            padding: 15px;
+            background-color: #003366;
+            color: #ffffff;
             margin-top: 40px;
         }
         .social-links {
-            margin-top: 20px;
+            margin-top: 10px;
         }
         .social-links a {
             margin: 0 10px;
             text-decoration: none;
-            color: #ffffff;
-            font-size: 24px;
+            color: #ffd700;
+            font-size: 20px;
             transition: color 0.3s ease;
         }
         .social-links a:hover {
-            color: #00b4ff;
+            color: #ffffff;
         }
         @media (max-width: 768px) {
             .values {
@@ -129,25 +154,11 @@
             }
             .intro {
                 flex-direction: column;
+                text-align: center;
             }
             .intro img {
                 max-width: 100%;
             }
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            color: #ffffff;
-            background: #00b4ff;
-            border: none;
-            border-radius: 5px;
-            text-transform: uppercase;
-            font-weight: bold;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
-        .btn:hover {
-            background: #008ecc;
         }
     </style>
 </head>
@@ -156,11 +167,11 @@
         <img src="logo.png" alt="NextGen Finance Logo">
         <h1>NextGen Finance</h1>
         <div class="nav">
-            <a href="index.html">Главная</a>
-            <a href="services.html">Услуги</a>
-            <a href="contacts.html">Контакты</a>
-            <a href="feedback.html">Обратная связь</a>
-            <a href="news.html">Новости</a>
+            <a href="#">Главная</a>
+            <a href="#">Услуги</a>
+            <a href="#">Контакты</a>
+            <a href="#">Обратная связь</a>
+            <a href="#">Новости</a>
         </div>
     </div>
 
@@ -168,8 +179,8 @@
         <img src="optimized_image.png" alt="About Us">
         <div>
             <h2>О компании</h2>
-            <p>NextGen Finance – это современная консалтинговая компания, которая специализируется на предоставлении качественных финансовых и бухгалтерских услуг. Мы помогаем нашим клиентам оптимизировать бизнес-процессы, снижать расходы и увеличивать прибыльность. Наша миссия заключается в создании устойчивых решений, которые помогают бизнесу расти и процветать в условиях быстро меняющейся экономической среды.</p>
-            <a href="contacts.html" class="btn">Связаться с нами</a>
+            <p>NextGen Finance – это современная консалтинговая компания, которая специализируется на предоставлении качественных финансовых и бухгалтерских услуг. Мы помогаем нашим клиентам оптимизировать бизнес-процессы, снижать расходы и увеличивать прибыльность.</p>
+            <a href="#" class="btn">Связаться с нами</a>
         </div>
     </div>
 
@@ -189,20 +200,15 @@
             <h3>Инновации</h3>
             <p>Мы внедряем современные технологии и подходы для достижения лучших результатов.</p>
         </div>
-        <div class="value">
-            <img src="client_focus_optimized.png" alt="Ориентация на клиентов">
-            <h3>Ориентация на клиентов</h3>
-            <p>Мы стремимся понять потребности каждого клиента и предложить персонализированные решения.</p>
-        </div>
     </div>
 
     <div class="footer">
         &copy; 2025 NextGen Finance. Все права защищены.
         <div class="social-links">
-            <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
-            <a href="https://wa.me/77472679803" target="_blank"><i class="fa fa-whatsapp"></i></a>
-            <a href="https://t.me/ваш_телеграм" target="_blank"><i class="fa fa-telegram"></i></a>
-            <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 </body>
