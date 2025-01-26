@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextGen Finance</title>
+    <title>Обратная связь | NextGen Finance</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
 
@@ -19,7 +19,6 @@
             color: white;
             padding: 20px;
             text-align: center;
-            position: relative;
         }
         .header img {
             width: 200px;
@@ -37,39 +36,37 @@
         .nav a:hover {
             color: #ffffff;
         }
-        .intro {
-            max-width: 1200px;
+        .content {
+            max-width: 800px;
             margin: 20px auto;
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
+        }
+        form {
             display: flex;
-            align-items: center;
-            gap: 20px;
+            flex-direction: column;
         }
-        .intro img {
-            max-width: 50%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        label {
+            margin-bottom: 5px;
         }
-        .values {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 20px;
+        input, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
         }
-        .value {
-            flex: 1 1 calc(45% - 10px);
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
+        button {
+            padding: 10px 20px;
+            background-color: #00b4ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
-        .value img {
-            max-width: 100px;
-            height: auto;
-            margin-bottom: 10px;
+        button:hover {
+            background-color: #008dcc;
         }
         .footer {
             text-align: center;
@@ -84,59 +81,29 @@
     <div class="header">
         <img src="logo.png" alt="NextGen Finance Logo">
         <h1>NextGen Finance</h1>
-        <h3>Business Consulting</h3>
         <div class="nav">
-            <a href="index.html">Главная</a>
-            <a href="services.html">Услуги</a>
-            <a href="contacts.html">Контакты</a>
-        </div>
+    <a href="index.html">Главная</a>
+    <a href="services.html">Услуги</a>
+    <a href="contacts.html">Контакты</a>
+    <a href="feedback.html">Обратная связь</a>
+</div>
     </div>
 
-    <div class="intro">
-        <img src="optimized_image.png" alt="Business Growth">
-        <div>
-            <h2>О компании</h2>
-            <p>NextGen Finance - это современная консалтинговая компания, которая специализируется на предоставлении качественных финансовых и бухгалтерских услуг. Мы помогаем нашим клиентам оптимизировать бизнес-процессы, снижать расходы и увеличивать прибыльность. Наша миссия заключается в создании устойчивых решений, которые помогают бизнесу расти и процветать в условиях быстро меняющейся экономической среды.</p>
-        </div>
-    </div>
+    <div class="content">
+        <h2>Обратная связь</h2>
+        <p>Если у вас есть вопросы или предложения, заполните форму ниже, и мы свяжемся с вами в ближайшее время.</p>
+        <form action="#" method="POST">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
 
-    <div class="values">
-        <div class="value">
-            <img src="professionalism_optimized.png" alt="Профессионализм">
-            <h3>Профессионализм</h3>
-            <p>Мы гарантируем высокое качество наших услуг благодаря опыту и знаниям нашей команды.</p>
-        </div>
-        <div class="value">
-            <img src="trust_optimized.png" alt="Доверие">
-            <h3>Доверие</h3>
-            <p>Наши клиенты всегда могут рассчитывать на конфиденциальность и честность.</p>
-        </div>
-        <div class="value">
-            <img src="innovation_optimized.png" alt="Инновации">
-            <h3>Инновации</h3>
-            <p>Мы используем современные подходы и технологии, чтобы находить лучшие решения для наших клиентов.</p>
-        </div>
-        <div class="value">
-            <img src="client_focus_optimized.png" alt="Ориентация на клиента">
-            <h3>Ориентация на клиента</h3>
-            <p>Мы учитываем индивидуальные потребности каждого клиента и предлагаем персонализированные услуги.</p>
-        </div>
-    </div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
 
-    <div style="position: fixed; bottom: 20px; right: 20px;">
-        <a href="https://wa.me/77472679803" target="_blank" style="
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            background-color: #25D366;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-decoration: none;
-        ">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px;">
-        </a>
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Введите ваше сообщение" required></textarea>
+
+            <button type="submit">Отправить</button>
+        </form>
     </div>
 
     <div class="footer">
