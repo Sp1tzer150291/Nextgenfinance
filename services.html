@@ -11,7 +11,7 @@
             font-family: 'Merriweather', serif;
             margin: 0;
             padding: 0;
-            background-color: #2b2b2b;
+            background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
             color: #ffffff;
         }
         .header {
@@ -25,6 +25,12 @@
             width: 200px;
             margin-bottom: 10px;
         }
+        .header h1 {
+            font-size: 3rem;
+            color: #00b4ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
         .nav {
             margin: 20px 0;
         }
@@ -33,9 +39,21 @@
             text-decoration: none;
             color: #00b4ff;
             font-weight: bold;
+            position: relative;
+            transition: color 0.3s;
         }
         .nav a:hover {
             color: #ffffff;
+        }
+        .nav a:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #00b4ff;
+            transition: width 0.3s;
         }
         .intro {
             max-width: 1200px;
@@ -65,6 +83,12 @@
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .value:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
         .value img {
             max-width: 100px;
@@ -83,11 +107,22 @@
             display: flex;
             align-items: center;
             gap: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
         .service img {
             max-width: 150px;
             height: auto;
             border-radius: 10px;
+        }
+        .service h3 {
+            color: #00b4ff;
         }
         .footer {
             text-align: center;
@@ -95,6 +130,17 @@
             background-color: #1f1f1f;
             color: #dcdcdc;
             margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+            }
+            .service {
+                flex-direction: column;
+            }
+            .service img {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
